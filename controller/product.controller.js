@@ -1,5 +1,3 @@
-
-
 var productModel = require('../models/product.model');
 
 //simple version of handler withour validationa and any other sanitation
@@ -9,7 +7,7 @@ exports.test= function(req,res){
     res.send('Greetings from the test controller');
 }
 
-exports.create_product = async function(req,res)
+exports.create_product = async function(req,res,next)
 {
     let product = new productModel(
     {
@@ -22,7 +20,15 @@ exports.create_product = async function(req,res)
     await product.save(function (err) {
         if (err) {
             //return next(err);
+            console.log(err);
+             
+            res.status(500);
+            res.send('Error Occured');
+         
         }
         res.send('Product Created successfully')
-    })
+        
+    });
+
+    next();
 };
