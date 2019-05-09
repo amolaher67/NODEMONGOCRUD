@@ -1,7 +1,8 @@
-let testexports = module.exports = {};
+let resultexports = module.exports = {};
 
-testexports.MakeResultConsistenet = function(req,res,next)
+resultexports.run = function(req,res,next)
 {
+    console.log(req);
     console.log(res);
     next();
 

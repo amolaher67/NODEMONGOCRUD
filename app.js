@@ -9,7 +9,7 @@ const app =  new express();
 
 //setup mogoConnection
   const mongoose = require('mongoose');
-  let dev_db_url = 'mongodb://localhost:2707/TESTDB';
+  let dev_db_url = 'mongodb://localhost:27017/TESTDB';
 
  const mongoDB = process.env.MONGODB_URI || dev_db_url;
 

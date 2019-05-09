@@ -11,5 +11,5 @@ const resultMiddleware = require('./Middlewears/ResultMiddleWare');
 router.use(validateMiddlewear.validateRequest);
 router.get("/test",product_controller.test);
 router.post("/create",product_controller.create_product);
-router.use(resultMiddleware.MakeResultConsistenet);
+router.use(resultMiddleware.run);
 module.exports = router;
